@@ -1,0 +1,60 @@
+{
+  "name": "@yog4a/grammy",
+  "description": "Personal encapsulation module for grammy",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "build:patch": "pnpm version patch && tsup",
+    "build:minor": "pnpm version minor && tsup",
+    "build:major": "pnpm version major && tsup",
+    "version:patch": "pnpm version patch",
+    "version:minor": "pnpm version minor",
+    "version:major": "pnpm version major",
+    "update": "pnpm up --latest"
+  },
+  "devDependencies": {
+    "@types/node": "^24.6.2",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@grammyjs/auto-retry": "^2.0.2",
+    "@grammyjs/chat-members": "^1.2.0",
+    "@grammyjs/conversations": "^2.1.0",
+    "@grammyjs/menu": "^1.3.1",
+    "@grammyjs/parse-mode": "^2.2.0",
+    "@grammyjs/ratelimiter": "^1.2.1",
+    "@grammyjs/runner": "^2.0.3",
+    "@grammyjs/stateless-question": "^4.0.0",
+    "@grammyjs/transformer-throttler": "^1.2.1",
+    "grammy": "^1.38.3"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.mjs"
+    },
+    "./core": {
+      "types": "./dist/core.d.ts",
+      "import": "./dist/core.mjs",
+      "require": "./dist/core.cjs",
+      "default": "./dist/core.mjs"
+    },
+    "./helpers": {
+      "types": "./dist/helpers.d.ts",
+      "import": "./dist/helpers.mjs",
+      "require": "./dist/helpers.cjs",
+      "default": "./dist/helpers.mjs"
+    }
+  }
+}
