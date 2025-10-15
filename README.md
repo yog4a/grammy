@@ -77,17 +77,13 @@ if (payload) {
   // do something with hidden data
 }
 ```
-# End of Selection
-```
 
----
+# End of Selection
 
 **Summary of structure:**
 
 - `@yog4a/grammy` — Grammy library and plugins.
 - `@yog4a/grammy/core` — Your project's structured, OOP bot classes.
 - `@yog4a/grammy/helpers` — Helper functions and hidden-data utilities.
-
----
 
 **Documentation for each plugin or helper can be found via your source code or internal project guides. For Grammy plugins, refer to the official [Grammy documentation](https://grammy.dev/plugins/).**
