@@ -1,4 +1,4 @@
-# @yog4a/grammy
+# Yog4a | grammy
 
 A personal encapsulation module for [Grammy](https://grammy.dev), providing enhanced functionality.
 
