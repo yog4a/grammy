@@ -1,9 +1,10 @@
 import type { Bot, Context } from 'grammy';
+import type { WithPayload } from 'src/core/types.js';
 
 // Middlewares
 import { sequentializePlugin } from './middlewares/concurrency.js';
 import { rateLimiterPlugin } from './middlewares/rate-limiter.js';
-import { enrichContext, type ContextPayload } from './middlewares/enrich-context.js';
+import { enrichContext } from './middlewares/enrich-context.js';
 import { configureErrorHandling } from './middlewares/error-handling.js';
 
 // Transformers
@@ -13,7 +14,7 @@ import { floodLimit } from './transformers/flood-limit.js';
 // Function
 // ===========================================================
 
-export function configurePlugins(bot: Bot<Context>): void {
+export function configurePlugins(bot: Bot<WithPayload<Context>>): void {
     // Middlewares
     bot.use(sequentializePlugin);
     bot.use(rateLimiterPlugin);
