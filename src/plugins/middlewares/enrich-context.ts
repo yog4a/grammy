@@ -24,7 +24,7 @@ export type ContextPayload = {
 //  Function
 // ===========================================================
 
-export const payload = async (ctx: Context | (Context & MenuFlavor), next: NextFunction): Promise<void> => {
+export const enrichContext = async (ctx: Context | (Context & MenuFlavor), next: NextFunction): Promise<void> => {
     try {
         if (!ctx) {
             throw new Error("Context is undefined");
@@ -111,6 +111,6 @@ export const payload = async (ctx: Context | (Context & MenuFlavor), next: NextF
     } catch (error) {
         // On error, delete _payload and continue
         delete (ctx as { _payload?: ContextPayload })['_payload'];
-        await next();
+        return;
     }
 }

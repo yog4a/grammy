@@ -1,10 +1,9 @@
-import { type WithPayload } from "src/core/types.js";
 import { Bot, GrammyError, HttpError, type Context } from 'grammy';
 
 // Function
 // ===========================================================
 
-export function configureErrorHandling(bot: Bot<WithPayload<Context>>): void {
+export function configureErrorHandling(bot: Bot<Context>): void {
     bot.catch((error) => {
         const ctx = error.ctx;
         const err = error.error;

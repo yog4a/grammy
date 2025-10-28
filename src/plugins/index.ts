@@ -1,22 +1,27 @@
 import type { Bot, Context } from 'grammy';
 
-import { autoRetryPlugin } from './middlewares/auto-retry.js';
+// Middlewares
 import { sequentializePlugin } from './middlewares/concurrency.js';
 import { rateLimiterPlugin } from './middlewares/rate-limiter.js';
-import { payload, type ContextPayload } from './middlewares/payload.js';
+import { enrichContext, type ContextPayload } from './middlewares/enrich-context.js';
 import { configureErrorHandling } from './middlewares/error-handling.js';
+
+// Transformers
+import { autoRetryPlugin } from './transformers/auto-retry.js';
+import { floodLimit } from './transformers/flood-limit.js';
 
 // Function
 // ===========================================================
 
-export function configurePlugins(bot: Bot<Context & { _payload: ContextPayload }>): void {
+export function configurePlugins(bot: Bot<Context>): void {
     // Middlewares
     bot.use(sequentializePlugin);
     bot.use(rateLimiterPlugin);
-    bot.use(payload);
+    bot.use(enrichContext);
     
     // Transformers
     bot.api.config.use(autoRetryPlugin);
+    //bot.api.config.use(floodLimit);
 
     // Error handling
     configureErrorHandling(bot);

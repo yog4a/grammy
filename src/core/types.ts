@@ -1,4 +1,4 @@
-import type { ContextPayload } from 'src/plugins/middlewares/payload.js';
+import type { ContextPayload } from 'src/plugins/middlewares/enrich-context.js';
 
 //  Types
 // ===========================================================
