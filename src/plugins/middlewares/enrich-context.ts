@@ -109,6 +109,7 @@ export const enrichContext = async (ctx: Context | (Context & MenuFlavor), next:
         await next();       
 
     } catch (error) {
+        console.error("Error enriching context", error);
         // On error, delete _payload and continue
         delete (ctx as { _payload?: ContextPayload })['_payload'];
         return;
