@@ -14,7 +14,7 @@ import { floodLimit } from './transformers/flood-limit.js';
 // Function
 // ===========================================================
 
-export function configurePlugins(bot: Bot<WithPayload<Context>>): void {
+export function configurePlugins<C extends Context>(bot: Bot<C>): void {
     // Middlewares
     bot.use(sequentializePlugin);
     bot.use(rateLimiterPlugin);

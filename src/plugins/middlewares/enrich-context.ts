@@ -1,5 +1,4 @@
 import type { Context, NextFunction } from 'grammy';
-import type { MenuFlavor } from "@grammyjs/menu";
 import { HiddenDataHelper } from 'src/helpers/HiddenDataHelper.js';
 
 //  Types
@@ -24,8 +23,8 @@ export type ContextPayload = {
 //  Function
 // ===========================================================
 
-export const enrichContext = async (ctx: Context | (Context & MenuFlavor), next: NextFunction): Promise<void> => {
-    try {
+export const enrichContext = async <C extends Context>(ctx: C, next: NextFunction): Promise<void> => {
+
         if (!ctx) {
             throw new Error("Context is undefined");
         }
@@ -103,15 +102,8 @@ export const enrichContext = async (ctx: Context | (Context & MenuFlavor), next:
         }
 
         // Attach the payload to the context if all data is valid
-        (ctx as Context & { _payload: ContextPayload })['_payload'] = data as ContextPayload;
+        (ctx as unknown as { _payload: ContextPayload })['_payload'] = data as ContextPayload;
 
         // Proceed to the next middleware or handler
-        await next();       
-
-    } catch (error) {
-        console.error("Error enriching context", error);
-        // On error, delete _payload and continue
-        delete (ctx as { _payload?: ContextPayload })['_payload'];
-        return;
-    }
+        await next();
 }
