@@ -56,6 +56,72 @@
       "import": "./dist/helpers.mjs",
       "require": "./dist/helpers.cjs",
       "default": "./dist/helpers.mjs"
+    },
+    "./menu": {
+      "types": "./dist/packages/menu.d.ts",
+      "import": "./dist/packages/menu.mjs",
+      "require": "./dist/packages/menu.cjs",
+      "default": "./dist/packages/menu.mjs"
+    },
+    "./auto-retry": {
+      "types": "./dist/packages/auto-retry.d.ts",
+      "import": "./dist/packages/auto-retry.mjs",
+      "require": "./dist/packages/auto-retry.cjs",
+      "default": "./dist/packages/auto-retry.mjs"
+    },
+    "./chat-members": {
+      "types": "./dist/packages/chat-members.d.ts",
+      "import": "./dist/packages/chat-members.mjs",
+      "require": "./dist/packages/chat-members.cjs",
+      "default": "./dist/packages/chat-members.mjs"
+    },
+    "./conversations": {
+      "types": "./dist/packages/conversations.d.ts",
+      "import": "./dist/packages/conversations.mjs",
+      "require": "./dist/packages/conversations.cjs",
+      "default": "./dist/packages/conversations.mjs"
+    },
+    "./parse-mode": {
+      "types": "./dist/packages/parse-mode.d.ts",
+      "import": "./dist/packages/parse-mode.mjs",
+      "require": "./dist/packages/parse-mode.cjs",
+      "default": "./dist/packages/parse-mode.mjs"
+    },
+    "./ratelimiter": {
+      "types": "./dist/packages/ratelimiter.d.ts",
+      "import": "./dist/packages/ratelimiter.mjs",
+      "require": "./dist/packages/ratelimiter.cjs",
+      "default": "./dist/packages/ratelimiter.mjs"
+    },
+    "./runner": {
+      "types": "./dist/packages/runner.d.ts",
+      "import": "./dist/packages/runner.mjs",
+      "require": "./dist/packages/runner.cjs",
+      "default": "./dist/packages/runner.mjs"
+    },
+    "./stateless-question": {
+      "types": "./dist/packages/stateless-question.d.ts",
+      "import": "./dist/packages/stateless-question.mjs",
+      "require": "./dist/packages/stateless-question.cjs",
+      "default": "./dist/packages/stateless-question.mjs"
+    },
+    "./transformer-throttler": {
+      "types": "./dist/packages/transformer-throttler.d.ts",
+      "import": "./dist/packages/transformer-throttler.mjs",
+      "require": "./dist/packages/transformer-throttler.cjs",
+      "default": "./dist/packages/transformer-throttler.mjs"
+    },
+    "./types": {
+      "types": "./dist/packages/types.d.ts",
+      "import": "./dist/packages/types.mjs",
+      "require": "./dist/packages/types.cjs",
+      "default": "./dist/packages/types.mjs"
+    },
+    "./grammy": {
+      "types": "./dist/packages/grammy.d.ts",
+      "import": "./dist/packages/grammy.mjs",
+      "require": "./dist/packages/grammy.cjs",
+      "default": "./dist/packages/grammy.mjs"
     }
   }
 }
