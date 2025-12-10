@@ -7,6 +7,7 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "scripts": {
+    "prepare": "tsup",
     "build": "tsup",
     "build:patch": "pnpm version patch && tsup",
     "build:minor": "pnpm version minor && tsup",
@@ -14,7 +15,8 @@
     "version:patch": "pnpm version patch",
     "version:minor": "pnpm version minor",
     "version:major": "pnpm version major",
-    "update": "pnpm up --latest"
+    "update": "pnpm up --latest",
+    "release": "git push --follow-tags"
   },
   "devDependencies": {
     "@types/node": "^24.6.2",
